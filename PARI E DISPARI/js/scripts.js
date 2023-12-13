@@ -21,23 +21,45 @@ else{
 }
 
 
-
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
-
 const numeroRandomPc = getRndInteger(1, 5);
 console.log(numeroRandomPc)
+
+
+let risultatatoSomma = sommaTot(numUtente,numeroRandomPc);
+console.log('risultatoSomma', risultatatoSomma, typeof risultatatoSomma);
+
+
+let risultatatoFinale = isEven(risultatatoSomma);
+
+
+const risultInPagina = document.querySelector('.risultato')
+
+if(evenOddUtente == risultatatoFinale){
+    risultInPagina.innerHTML = 'HAI VINTO!'
+}
+else{
+    risultInPagina.innerHTML = 'HAI PERSO'
+}
+
+
+
+/* 
+
+    FUNZIONI
+
+*/
+
+
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 
 
 function sommaTot (a, b){
     const sommaTot = a + b;
     return sommaTot
 }
-
-let risultatatoSomma = sommaTot(numUtente,numeroRandomPc);
-console.log('risultatoSomma', risultatatoSomma, typeof risultatatoSomma)
-
 
 
 function isEven(result){
@@ -48,14 +70,3 @@ function isEven(result){
         return "dispari";
     }
 } 
-
-let risultatatoFinale = isEven(risultatatoSomma)
-
-
-if(evenOddUtente == risultatatoFinale){
-    console.log('hai vinto');
-}
-else{
-    console.log('hai perso');
-}
-
